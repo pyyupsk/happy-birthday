@@ -1,0 +1,26 @@
+body {
+  font-family: 'Prompt', sans-serif;
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(45deg, #ff004d, #ff8c00);
+  opacity: 0.9;
+  animation: confetti 3s infinite;
+}
+.confetti:nth-child(2n) {
+  background: linear-gradient(45deg, #00bfff, #ff6347);
+}
+.confetti:nth-child(3n) {
+  background: linear-gradient(45deg, #32cd32, #ffff00);
+}
