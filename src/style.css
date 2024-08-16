@@ -1,26 +1,59 @@
+/*
+ * Global Styles
+ */
+
+/* Set the font family of the entire page to Prompt */
 body {
   font-family: 'Prompt', sans-serif;
 }
 
+/*
+ * Confetti Animation
+ */
+
+/*
+ * The animation for the confetti effect. Moves the confetti from the top of the
+ * screen to the bottom while rotating it 360 degrees. The animation is set to
+ * infinite so it will loop indefinitely.
+ */
 @keyframes confetti {
-  0% {
+  from {
     transform: translateY(0) rotate(0deg);
   }
-  100% {
+
+  to {
     transform: translateY(100vh) rotate(360deg);
   }
 }
+
+/*
+ * Confetti Styles
+ */
+
+/*
+ * The styles for the confetti elements. The confetti elements are positioned
+ * absolutely so they are positioned relative to the closest positioned ancestor
+ * element. The width and height are set to 10px and the opacity is set to 0.9 so
+ * the confetti is slightly transparent. The animation is set to the confetti
+ * animation defined above and is set to infinite so it will loop indefinitely.
+ */
 .confetti {
   position: absolute;
   width: 10px;
   height: 10px;
-  background: linear-gradient(45deg, #ff004d, #ff8c00);
+  background-image: linear-gradient(45deg, #ff004d, #ff8c00);
   opacity: 0.9;
-  animation: confetti 3s infinite;
+  animation: confetti 2s infinite linear;
 }
+
+/*
+ * Set the background color of every other confetti element to a different
+ * gradient. The nth-child selector is used to select every other element.
+ */
 .confetti:nth-child(2n) {
-  background: linear-gradient(45deg, #00bfff, #ff6347);
+  background-image: linear-gradient(45deg, #00bfff, #ff6347);
 }
+
 .confetti:nth-child(3n) {
-  background: linear-gradient(45deg, #32cd32, #ffff00);
+  background-image: linear-gradient(45deg, #32cd32, #ffff00);
 }
